@@ -3,7 +3,7 @@ import ScrapeTwitterAccounts from "./Logic/ScrapeTwitterAccounts";
 
 const waitingTimeInterval = async (totalMinutes: number): Promise<void> => {
     const barLength = 60; 
-    const totalTimeSeconds = (totalMinutes * 60) + 20;
+    const totalTimeSeconds = (totalMinutes * 60) + (totalMinutes <= 1 ? 20 : 0);
     let elapsedSeconds = 0;
 
     return new Promise<void>((resolve) => {
