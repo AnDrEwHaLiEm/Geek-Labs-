@@ -1,6 +1,6 @@
 import ScrapeTwitterPage from "./ScrapeTwitterPage";
 class ScrapeTwitterAccounts {
-    async scrapeTwitterAccounts(twitterAccounts: string[], ticker: string, interval: number): Promise<number> {
+    async scrapeTwitterAccounts(twitterAccounts: string[], ticker: string): Promise<number> {
         let totalMentions = 0;
         const scrapeTwitterPageInstance = new ScrapeTwitterPage();
         for (const account of twitterAccounts) {

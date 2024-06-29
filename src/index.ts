@@ -36,7 +36,7 @@ const startProcess = async (): Promise<void> => {
 
     const scrapeTwitterAccountsInstance = new ScrapeTwitterAccounts();
     while (true) {
-        const scrapingPromise = scrapeTwitterAccountsInstance.scrapeTwitterAccounts(twitterAccounts, ticker, interval);
+        const scrapingPromise = scrapeTwitterAccountsInstance.scrapeTwitterAccounts(twitterAccounts, ticker);
         const progressBarPromise = waitingTimeInterval(interval);
         await Promise.all([progressBarPromise, scrapingPromise]);
         const totalMentions = await scrapingPromise;
